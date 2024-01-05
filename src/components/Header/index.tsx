@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import styles from "./header.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import router from "next/router";
-// import * as se from "src/components/se";
+import * as se from "../se";
 // import MainTitle from "../MainTitle";
 // import { PopupMenu } from "../Popupmenu/page";
 
@@ -23,7 +23,7 @@ export function Header() {
 
   const handleToggle = () => {
     setIsDarkMode(!isDarkMode);
-    // se.set.play();
+    se.set.play();
   };
 
   const reload = () => {
