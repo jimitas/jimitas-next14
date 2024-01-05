@@ -38,7 +38,7 @@ export function Header() {
       <Link href="./">
         <FontAwesomeIcon
           icon={faHome}
-          className="w-14 h-6 md:h-8 lg:h-10 text-green-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+          className="w-14 h-6 md:h-7 lg:h-8 text-green-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
         />
       </Link>
 
@@ -52,7 +52,7 @@ export function Header() {
       <FontAwesomeIcon
         onClick={reload}
         icon={faUndo}
-        className="w-12 h-6 md:h-8 lg:h-10 text-blue-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+        className="w-12 h-6 md:h-7 lg:h-8 text-blue-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
       />
 
       {/* <PopupMenu /> */}
