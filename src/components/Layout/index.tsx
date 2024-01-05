@@ -12,7 +12,9 @@ const Layout: React.FC<LayoutProps> = ({ children, title }) => {
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow mt-8 md:mt-10 lg:mt-12">
-        <div className="bg-blue-100">{title}</div>
+        <div id="content-title" className="text-3xl text-center text-bold">
+          {title}
+        </div>
         <div>{children}</div>
       </main>
       <Footer />
