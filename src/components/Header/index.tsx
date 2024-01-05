@@ -1,5 +1,3 @@
-"use client";
-
 import Link from "next/link";
 import React from "react";
 import { faUndo, faHome, faPalette, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
@@ -11,7 +9,7 @@ import router from "next/router";
 // import MainTitle from "../MainTitle";
 // import { PopupMenu } from "../Popupmenu/page";
 
-const Header = () => {
+export function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
   useEffect(() => {
     if (isDarkMode) {
@@ -36,33 +34,28 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-start w-screen ps-2 h-8 md:h-10 lg:h-12 border-b items-center select-none absolute top-0 z-50 bg-green-200">
-      <Link href="./" className="w-12 text-center">
+    <header className="flex flex-start w-screen ps-2 h-8 md:h-10 lg:h-12 border-b items-center absolute top-0 z-50">
+      <Link href="./">
         <FontAwesomeIcon
           icon={faHome}
-          className="text-2xl text-green-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+          className="w-14 h-6 md:h-8 lg:h-10 text-green-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
         />
       </Link>
 
-      <div className="w-12 text-center">
-        <form action="#">
-          <label className={styles.switch}>
-            <input type="checkbox" onChange={handleToggle}></input>
-            <span className={styles.slider}></span>
-          </label>
-        </form>
-      </div>
+      <form action="#" className="w-12 text-center">
+        <label className={styles.switch}>
+          <input type="checkbox" onChange={handleToggle}></input>
+          <span className={styles.slider}></span>
+        </label>
+      </form>
 
-      <div className="w-12 text-center" onClick={reload}>
-        <FontAwesomeIcon
-          icon={faUndo}
-          className="text-2xl text-blue-600 font-bold cursor-pointer hover:opacity-80 hover:transition duration-300"
-        />
-      </div>
+      <FontAwesomeIcon
+        onClick={reload}
+        icon={faUndo}
+        className="w-12 h-6 md:h-8 lg:h-10 text-blue-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+      />
 
       {/* <PopupMenu /> */}
     </header>
   );
-};
-
-export default Header;
+}
