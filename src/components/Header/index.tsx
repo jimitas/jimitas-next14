@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 // import { PopupMenu } from "../Popupmenu/page";
 
 export function Header() {
-  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
   const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
 
   // 目に負担がかからないために、連打できない設定にする。
@@ -44,7 +44,7 @@ export function Header() {
   }, [isDarkMode]);
 
   const reload = () => {
-    // se.set.play();
+    se.set.play();
     const result = window.confirm("もういちど　ページを　よみこみますか？");
     if (result === false) return;
     location.reload();
