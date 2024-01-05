@@ -36,7 +36,7 @@ const Header = () => {
   };
 
   return (
-    <header className="flex justify-start w-screen ms-2 h-8 md:h-10 lg:h-12 border-b items-center select-none absolute top-0 z-50">
+    <header className="flex justify-start w-screen ps-2 h-8 md:h-10 lg:h-12 border-b items-center select-none absolute top-0 z-50 bg-green-200">
       <Link href="./" className="w-12 text-center">
         <FontAwesomeIcon
           icon={faHome}
