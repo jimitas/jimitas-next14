@@ -1,16 +1,38 @@
-import Link from "next/link";
-import React from "react";
-import { faUndo, faHome, faPalette, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
-import { useEffect, useState } from "react";
-import styles from "./header.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import router from "next/router";
 import * as se from "../se";
-// import MainTitle from "../MainTitle";
+import Link from "next/link";
+import styles from "./header.module.css";
+import router from "next/router";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUndo, faHome, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useState } from "react";
 // import { PopupMenu } from "../Popupmenu/page";
 
 export function Header() {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isButtonDisabled, setIsButtonDisabled] = useState<boolean>(false);
+
+  // 目に負担がかからないために、連打できない設定にする。
+  useEffect(() => {
+    if (!isButtonDisabled) return;
+
+    const timer = setTimeout(() => {
+      setIsButtonDisabled(false);
+    }, 1000); // ボタンの無効化時間（ミリ秒）
+
+    return () => clearTimeout(timer);
+  }, [isButtonDisabled]);
+
+  const handleToggle = () => {
+    if (isButtonDisabled) {
+      se.alertSound.play();
+      alert("ボタンの連打は無効です。");
+    } else {
+      se.set.play();
+    }
+    setIsDarkMode(!isDarkMode);
+    setIsButtonDisabled(true);
+  };
+
   useEffect(() => {
     if (isDarkMode) {
       document.body.style.color = "white";
@@ -21,11 +43,6 @@ export function Header() {
     }
   }, [isDarkMode]);
 
-  const handleToggle = () => {
-    setIsDarkMode(!isDarkMode);
-    se.set.play();
-  };
-
   const reload = () => {
     // se.set.play();
     const result = window.confirm("もういちど　ページを　よみこみますか？");
@@ -33,14 +50,33 @@ export function Header() {
     location.reload();
   };
 
+  const back = () => {
+    se.set.play();
+    const result = window.confirm("まえの　ページに　もどりますか？");
+    if (result === false) return;
+    router.back();
+  };
+
   return (
     <header className="flex flex-start w-screen ps-2 h-8 md:h-10 lg:h-12 border-b items-center absolute top-0 z-50">
       <Link href="./">
         <FontAwesomeIcon
           icon={faHome}
-          className="w-14 h-6 md:h-7 lg:h-8 text-green-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+          className="w-14 h-6 md:h-7 lg:h-8 text-red-400 cursor-pointer hover:opacity-80 hover:transition duration-300"
         />
       </Link>
+
+      <FontAwesomeIcon
+        onClick={back}
+        icon={faLongArrowAltLeft}
+        className="w-12 h-6 md:h-7 lg:h-8 text-orange-300 cursor-pointer hover:opacity-80 hover:transition duration-300"
+      />
+
+      <FontAwesomeIcon
+        onClick={reload}
+        icon={faUndo}
+        className="w-12 h-6 md:h-7 lg:h-8 text-blue-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
+      />
 
       <form action="#" className="w-12 text-center">
         <label className={styles.switch}>
@@ -48,12 +84,6 @@ export function Header() {
           <span className={styles.slider}></span>
         </label>
       </form>
-
-      <FontAwesomeIcon
-        onClick={reload}
-        icon={faUndo}
-        className="w-12 h-6 md:h-7 lg:h-8 text-blue-500 cursor-pointer hover:opacity-80 hover:transition duration-300"
-      />
 
       {/* <PopupMenu /> */}
     </header>
