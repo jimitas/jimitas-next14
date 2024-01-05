@@ -2,7 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-
+.body {
+  font-family: "UD デジタル 教科書体 NK-R", "ヒラギノ角ゴ ProN W3", HiraKakuProN-W3, 游ゴシック, "Yu Gothic", メイリオ,
+    Meiryo, Verdana, Helvetica, Arial, sans-serif;
+  user-select: none;
+}
 
 @media (prefers-color-scheme: dark) {
 
