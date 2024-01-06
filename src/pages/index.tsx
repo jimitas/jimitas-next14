@@ -1,16 +1,13 @@
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import Layout from "@/components/Layout";
+import Title from "@/components/Title";
 import MainTitle from "@/components/MainTitle";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   return (
-    <Layout title="">
+    <div>
+      <Title title="index" />
       <MainTitle />
       <br />
       {/* <Links /> */}
-    </Layout>
+    </div>
   );
 }
