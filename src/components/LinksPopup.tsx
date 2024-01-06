@@ -3,7 +3,6 @@ import Link from "next/link";
 
 const ITEMS = [
   {
-    id: "grade-1",
     title: "１ねんせい",
     links: [
       { href: "101block", title: "ぶろっく" },
@@ -20,7 +19,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "grade-2",
     title: "２年生",
     links: [
       { href: "201tokei", title: "とけい" },
@@ -32,7 +30,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "grade-3",
     title: "３年生",
     links: [
       { href: "301warizan", title: "わり算" },
@@ -49,7 +46,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "grade-4",
     title: "４年生",
     links: [
       { href: "401kazu_oku", title: "１億より大きな数" },
@@ -61,7 +57,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "grade-5",
     title: "５年生",
     links: [
       { href: "501shousu_kake", title: "小数のかけ算" },
@@ -72,7 +67,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "grade-6",
     title: "６年生",
     links: [
       { href: "601bunsu_kake", title: "分数のかけ算" },
@@ -80,7 +74,6 @@ const ITEMS = [
     ],
   },
   {
-    id: "dougu-bako",
     title: "どうぐばこ",
     links: [
       { href: "701keisanbou", title: "けいさんぼう" },
@@ -96,7 +89,6 @@ const LinksPopup: React.FC = () => {
         <div key={itemGroup.title}>
           <hr />
           <div
-            id={itemGroup.id}
             className="flex p-2 text-2xl md:text-3xl lg:text-4xl text-center md:text-start text-bold text-white bg-green-600"
           >
             {itemGroup.title}
