@@ -1,7 +1,5 @@
 import React from "react";
 import Link from "next/link";
-import { faCircleChevronUp } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ITEMS = [
   {
@@ -91,32 +89,9 @@ const ITEMS = [
   },
 ];
 
-const Links: React.FC = () => {
+const LinksPopup: React.FC = () => {
   return (
     <div>
-      <div className="flex ps-3 pb-2 text-blue-700 space-x-3">
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-1">
-          １ねん
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-2">
-          ２年
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-3">
-          ３年
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-4">
-          ４年
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-5">
-          ５年
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-6">
-          ６年
-        </Link>
-        <Link className="hover:bg-blue-500 hover:text-white" href="#dougu-bako">
-          どうぐばこ
-        </Link>
-      </div>
       {ITEMS.map((itemGroup) => (
         <div key={itemGroup.title}>
           <hr />
@@ -125,12 +100,6 @@ const Links: React.FC = () => {
             className="flex p-2 text-2xl md:text-3xl lg:text-4xl text-center md:text-start text-bold text-white bg-green-600"
           >
             {itemGroup.title}
-            <Link href="#">
-              <FontAwesomeIcon
-                icon={faCircleChevronUp}
-                className="w-12 h-6 md:h-7 lg:h-8 text-white cursor-pointer hover:opacity-80 hover:transition duration-300"
-              />
-            </Link>
           </div>
 
           <div className="m-3 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
@@ -149,9 +118,8 @@ const Links: React.FC = () => {
           </div>
         </div>
       ))}
-      <div style={{ height: "90vh" }}></div>
     </div>
   );
 };
 
-export default Links;
+export default LinksPopup;

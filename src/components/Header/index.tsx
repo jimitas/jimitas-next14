@@ -5,7 +5,7 @@ import router from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndo, faHome, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-// import { PopupMenu } from "../Popupmenu/page";
+import { PopupMenu } from "../Popupmenu";
 
 export function Header() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -85,7 +85,7 @@ export function Header() {
         </label>
       </form>
 
-      {/* <PopupMenu /> */}
+      <PopupMenu />
     </header>
   );
 }

@@ -1,0 +1,73 @@
+/* .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-menu-container {
+  position: relative;
+} */
+/* 
+.popupMenu {
+  position: absolute;
+  top: 64px;
+  left: 100px;
+  z-index: 2;
+  transform: scale(0);
+  transition: transform 0.2s;
+  transform-origin: top left;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.5rem;
+
+  overflow: auto;} /* スクロール可能にする */
+
+.popupMenu {
+  position: absolute;
+  top: 32px;
+  left: 50px;
+  z-index: 2;
+  transform: scale(0);
+  transition: transform 0.2s;
+  transform-origin: top left;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 2px blue solid;
+  overflow: auto; /* スクロール可能にする */
+}
+
+.popupMenuShown {
+  position: absolute;
+  top: 32px;
+  left: 50px;
+  z-index: 1000;
+  transform: scale(0.8);
+  transform-origin: top left;
+  width: 100vw;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  background-color: antiquewhite;
+  border-radius: 0.5rem;
+  transition: transform 0.2s;
+  border: 2px orange solid;
+  overflow: auto; /* スクロール可能にする */
+}
+
+@media screen and (max-width: 767px) {
+  .popupMenuShown {
+    top: 32px;
+    left: 10px;
+    transform: scale(0.7);
+    width: 100vw;
+  }
+}
+@media screen and (max-width: 480px) {
+  .popupMenuShown {
+    top: 32px;
+    left: 10px;
+    transform: scale(0.6);
+    width: 120vw;
+  }
+}
