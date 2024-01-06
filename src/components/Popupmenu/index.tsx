@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef, FC } from "react";
-import LinksPopup from "../LinksPopup";
+import LinksForPopup from "../Links/LinksForPopup";
 
 //コンテンツの外をクリックしたら、isShow=falseになって、ポップアップが消えるようにしたい。できればでよいが…。
 export const PopupMenu: FC = () => {
@@ -34,7 +34,7 @@ export const PopupMenu: FC = () => {
           icon={faWindowClose}
           onClick={handleCloseButtonClick}
         />
-        <LinksPopup />
+        <LinksForPopup />
       </div>
     </div>
   );

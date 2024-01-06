@@ -1,6 +1,6 @@
 import * as se from "../se";
 import Link from "next/link";
-import styles from "./header.module.css";
+import styles from "./Header.module.css";
 import router from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndo, faHome, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";

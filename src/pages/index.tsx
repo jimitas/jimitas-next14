@@ -1,6 +1,6 @@
-import Title from "@/components/Title";
-import MainTitle from "@/components/MainTitle";
-import Links from "@/components/Links";
+import Title from "@/components/Layout/Title";
+import MainTitle from "@/components/Layout/MainTitle";
+import LinksForTopPage from "@/components/Links/LinksForTopPage";
 
 export default function Home() {
   return (
@@ -8,7 +8,7 @@ export default function Home() {
       <Title title="" />
       <MainTitle />
       <br />
-      <Links />
+      <LinksForTopPage />
     </div>
   );
 }
