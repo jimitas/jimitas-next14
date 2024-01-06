@@ -17,7 +17,7 @@ export function Header() {
 
     const timer = setTimeout(() => {
       setIsButtonDisabled(false);
-    }, 1000); // ボタンの無効化時間（ミリ秒）
+    }, 500); // ボタンの無効化時間（ミリ秒）
 
     return () => clearTimeout(timer);
   }, [isButtonDisabled]);

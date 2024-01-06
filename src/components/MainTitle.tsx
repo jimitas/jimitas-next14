@@ -7,7 +7,7 @@ const MainTitle: React.FC = () => {
     <div>
       <div className="mt-5 flex justify-center items-center">
         <div className="w-8 sm:w-10 md:w-12 lg:w-14">
-          <FontAwesomeIcon className="text-lg sm:text-2xl md:text-3xl lg:text-4xl" icon={faCat} />　
+          <FontAwesomeIcon className="text-lg sm:text-2xl md:text-3xl lg:text-4xl me-2" icon={faCat} />
         </div>
         <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl">
           <div className="font-bold">
@@ -31,8 +31,8 @@ const MainTitle: React.FC = () => {
             <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl">(ジミタス)</span>
           </div>
         </div>
-        <div className="w-8 sm:w-10 md:w-12 lg:w-14 ms-2">
-          <FontAwesomeIcon className="text-lg sm:text-2xl md:text-3xl lg:text-4xl" icon={faCat} />
+        <div className="w-8 sm:w-10 md:w-12 lg:w-14">
+          <FontAwesomeIcon className="text-lg sm:text-2xl md:text-3xl lg:text-4xl ms-2" icon={faCat} />
         </div>
       </div>
     </div>
