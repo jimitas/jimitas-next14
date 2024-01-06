@@ -1,9 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import styles from "src/components/Links/Links.module.scss";
+import { faCircleChevronUp } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const ITEMS = [
   {
+    id: "grade-1",
     title: "１ねんせい",
     links: [
       { href: "101block", title: "ぶろっく" },
@@ -20,6 +23,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "grade-2",
     title: "２年生",
     links: [
       { href: "201tokei", title: "とけい" },
@@ -31,6 +35,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "grade-3",
     title: "３年生",
     links: [
       { href: "301warizan", title: "わり算" },
@@ -47,6 +52,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "grade-4",
     title: "４年生",
     links: [
       { href: "401kazu_oku", title: "１億より大きな数" },
@@ -58,6 +64,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "grade-5",
     title: "５年生",
     links: [
       { href: "501shousu_kake", title: "小数のかけ算" },
@@ -68,6 +75,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "grade-6",
     title: "６年生",
     links: [
       { href: "601bunsu_kake", title: "分数のかけ算" },
@@ -75,6 +83,7 @@ const ITEMS = [
     ],
   },
   {
+    id: "dougu-bako",
     title: "どうぐばこ",
     links: [
       { href: "701keisanbou", title: "けいさんぼう" },
@@ -86,11 +95,43 @@ const ITEMS = [
 const Links: React.FC = () => {
   return (
     <div>
+      <div className="flex ps-3 pb-2 text-blue-700 space-x-3">
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-1">
+          １ねん
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-2">
+          ２年
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-3">
+          ３年
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-4">
+          ４年
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-5">
+          ５年
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#grade-6">
+          ６年
+        </Link>
+        <Link className="hover:bg-blue-500 hover:text-white" href="#dougu-bako">
+          どうぐばこ
+        </Link>
+      </div>
       {ITEMS.map((itemGroup) => (
         <div key={itemGroup.title}>
           <hr />
-          <div className="p-2 text-2xl md:text-3xl lg:text-4xl text-center md:text-start text-bold text-white bg-green-600">
+          <div
+            id={itemGroup.id}
+            className="flex p-2 text-2xl md:text-3xl lg:text-4xl text-center md:text-start text-bold text-white bg-green-600"
+          >
             {itemGroup.title}
+            <Link href="#">
+              <FontAwesomeIcon
+                icon={faCircleChevronUp}
+                className="w-12 h-6 md:h-7 lg:h-8 text-white cursor-pointer hover:opacity-80 hover:transition duration-300"
+              />
+            </Link>
           </div>
 
           <div className="grid grid-cols-2 m-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
@@ -109,6 +150,7 @@ const Links: React.FC = () => {
           </div>
         </div>
       ))}
+      <div style={{ height: "90vh" }}></div>
     </div>
   );
 };
