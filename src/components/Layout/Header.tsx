@@ -1,11 +1,11 @@
-import * as se from "../se";
+import * as se from "@/components/se";
 import Link from "next/link";
 import styles from "./Header.module.css";
 import router from "next/router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUndo, faHome, faLongArrowAltLeft } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
-import { PopupMenu } from "../Popupmenu";
+import { PopupMenu } from "@/components/Popupmenu";
 
 export function Header() {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -58,7 +58,7 @@ export function Header() {
   };
 
   return (
-    <header className="flex flex-start w-screen ps-2 h-8 md:h-10 lg:h-12 border-b items-center absolute top-0 z-50">
+    <header className="flex flex-start w-screen ps-2 h-8 md:h-10 lg:h-12 xl:h-14 border-b items-center absolute top-0 z-50">
       <Link href="./">
         <FontAwesomeIcon
           icon={faHome}

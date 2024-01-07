@@ -1,4 +1,4 @@
-import styles from "src/components/PutShiki/PutShiki.module.css";
+import styles from "./PutShiki.module.css";
 export function PutShiki(props) {
   const el_right_input = props.el_right_input;
   const el_left_input = props.el_left_input;

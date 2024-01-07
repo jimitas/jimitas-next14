@@ -1,10 +1,10 @@
-import * as se from "../se";
+import * as se from "@/components/se";
 import styles from "./Popupmenu.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faList } from "@fortawesome/free-solid-svg-icons";
 import { faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import { useState, useRef, FC } from "react";
-import LinksForPopup from "../Links/LinksForPopup";
+import LinksForPopup from "@/components/Links/LinksForPopup";
 
 //コンテンツの外をクリックしたら、isShow=falseになって、ポップアップが消えるようにしたい。できればでよいが…。
 export const PopupMenu: FC = () => {

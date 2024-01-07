@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "@/components/PutButton/button.module.scss";
 
 interface BtnNumProps {
   ITEM: number[]; // ITEMはnumber型の配列として指定します
@@ -13,11 +12,15 @@ export function BtnNum(props: BtnNumProps) {
     handleEvent(num);
   };
 
-
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="h-12 md:h-16 xl:h-20 2xl:h-24 container flex justify-center items-center flex-wrap bg-orange-100">
       {ITEM.map((num) => (
-        <button className={styles.btnNum} onClick={() => handleClick(num)} key={num} value={num}>
+        <button
+          className="btn border-blue-700 bg-white border-2 text-blue-700  hover:bg-blue-700 hover:text-white rounded-lg shadow-lg"
+          onClick={() => handleClick(num)}
+          key={num}
+          value={num}
+        >
           {num}
         </button>
       ))}
