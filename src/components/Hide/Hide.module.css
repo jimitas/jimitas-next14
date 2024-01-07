@@ -1,0 +1,23 @@
+.hide {
+  width: max(22vw, 220px);
+  height: max(9vw, 90px);
+  margin: auto;
+  background-color: #333;
+  opacity: 0.9;
+  z-index: 100;
+  border: yellowgreen 1px solid;
+  pointer-events: none;
+  position: absolute;
+}
+
+.grip {
+  width: max(2vw, 20px);
+  height: max(9vw, 90px);
+  z-index: 100;
+  position: absolute;
+  right: 0;
+  background-color: yellow;
+  pointer-events: all;
+  cursor: grab;
+}
+
