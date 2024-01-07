@@ -1,7 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import styles from "@/components/PutButton/button.module.scss";
 
 interface BtnCheckProps {
   handleEvent: () => void;
