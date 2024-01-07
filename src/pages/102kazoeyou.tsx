@@ -83,7 +83,6 @@ export default function Home() {
       <PutImage el_img={el_img}></PutImage>
       <BtnNum ITEM={NUM} handleEvent={checkAnswer}></BtnNum>
       <BtnQuestion handleEvent={giveQuestion}></BtnQuestion>
-      <BtnUndo handleEvent={giveQuestion}/>
     </div>
   );
 }
