@@ -22,12 +22,12 @@ export function Block(props: BlockProps) {
   const el_table = useRef<HTMLDivElement>(null);
 
   // ４つの数図ブロックに格納する数の算出
-  const left_up = props.leftCount > 10 ? 10 : 0 || 0;
-  const right_up = props.rightCount > 10 ? 10 : 0 || 0;
-  const left_down = props.leftCount > 10 ? props.leftCount - 10 : props.leftCount === 0 ? 0 : props.leftCount || 10;
-  const right_down = props.rightCount > 10 ? props.rightCount - 10 : props.rightCount === 0 ? 0 : props.rightCount || 10;
+  const left_up:number = props.leftCount > 10 ? 10 : 0 || 0;
+  const right_up:number = props.rightCount > 10 ? 10 : 0 || 0;
+  const left_down:number = props.leftCount > 10 ? props.leftCount - 10 : props.leftCount === 0 ? 0 : props.leftCount || 10;
+  const right_down:number = props.rightCount > 10 ? props.rightCount - 10 : props.rightCount === 0 ? 0 : props.rightCount || 10;
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
 
   const resetTable = () => {
     setCount((count) => count + 1);
