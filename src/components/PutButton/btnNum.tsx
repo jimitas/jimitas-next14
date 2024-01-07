@@ -13,10 +13,13 @@ export function BtnNum(props: BtnNumProps) {
   };
 
   return (
-    <div className="h-12 md:h-16 xl:h-20 2xl:h-24 container flex justify-center items-center flex-wrap bg-orange-100">
+    <div className="h-12 md:h-16  container flex justify-center items-center flex-wrap bg-orange-100">
       {ITEM.map((num) => (
         <button
-          className="btn border-blue-700 bg-white border-2 text-blue-700  hover:bg-blue-700 hover:text-white rounded-lg shadow-lg"
+          className="m-0.5 sm:m-1 p-1 font-bold
+           w-8 sm:w-10 md:w-12 
+           text-sm sm:text-base md:text-xl
+          border-blue-700 bg-white border-2 text-blue-700  hover:bg-blue-700 hover:text-white active:translate-y-1 rounded-lg shadow-lg"
           onClick={() => handleClick(num)}
           key={num}
           value={num}

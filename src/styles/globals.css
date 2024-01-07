@@ -14,22 +14,5 @@ img {
   margin: max(0.3vw, 1px);
 }
 
-.btn {
-  width: max(5vw, 32px);
-  height: max(4vw, 32px);
-  line-height: max(4vw, 32px);
-  margin: max(0.3vw, 1px);
-  font-size: max(2.4vw, 20px);
-  text-align: center;
-}
-
-.btn:active {
-  /*ボタンを押したとき*/
-  transform: translateY(4px);
-  /*下に動く*/
-  border-bottom: none;
-  /*線を消す*/
-}
-
 @media (prefers-color-scheme: dark) {
 }
