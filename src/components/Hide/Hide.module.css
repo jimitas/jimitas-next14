@@ -1,9 +1,9 @@
 .hide {
-  width: max(22vw, 220px);
+  width: max(22vw, 200px);
   height: max(9vw, 90px);
   margin: auto;
   background-color: #333;
-  opacity: 0.9;
+  opacity: 0.95;
   z-index: 100;
   border: yellowgreen 1px solid;
   pointer-events: none;
