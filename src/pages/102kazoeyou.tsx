@@ -1,4 +1,5 @@
 import * as se from "@/components/se";
+import Title from "@/components/Layout/Title";
 import { useEffect, useState, useRef, useCallback } from "react";
 import { PutSelect } from "@/components/PutSelect";
 import { BtnNum } from "@/components/PutButton/btnNum";
@@ -7,9 +8,6 @@ import { useCheckAnswer } from "@/hooks/useCheckAnswer";
 import { useClearImage } from "@/hooks/useClearImage";
 import { PutImage } from "@/components/PutImage";
 import { PutText } from "@/components/PutText";
-import Title from "@/components/Layout/Title";
-import { BtnNext } from "@/components/PutButton/btnNext";
-import { BtnShuffle } from "@/components/PutButton/btnShuffle";
 import { BtnUndo } from "@/components/PutButton/btnUndo";
 
 const ITEM: number[] = [5, 6, 7, 8, 9, 10];

@@ -8,3 +8,5 @@ PutButton群の Cssをtailwinndで記述
 z-indexの上下関係
 
 tableの色付
+
+コンポーネントのtsx化を目指す。

@@ -17,6 +17,6 @@
       "@/*": ["./src/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Layout/Title.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "src/components/Layout/Title.tsx", "src/components/PutSelect.jsx", "src/components/PutText.jsx"],
   "exclude": ["node_modules"]
 }
