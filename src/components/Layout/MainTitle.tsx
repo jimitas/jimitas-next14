@@ -9,8 +9,12 @@ const MainTitle: React.FC = () => {
         <div className="w-8 sm:w-10 md:w-12 lg:w-14">
           <FontAwesomeIcon className="text-lg sm:text-2xl md:text-3xl lg:text-4xl me-2" icon={faCat} />
         </div>
-        <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-          <div className="font-bold">
+        <div className="text-lg sm:text-2xl md:text-3xl lg:text-4xl ">
+          <div className="text-center font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl">
+            Jimitas
+            <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl">(ジミタス)</span>
+          </div>
+          <div className="text-sm sm:text-md md:text-xl lg:text-2xl">
             <ruby>
               地味
               <rt>じみ</rt>
@@ -25,10 +29,6 @@ const MainTitle: React.FC = () => {
               <rt>がくしゅう</rt>
             </ruby>
             コンテンツ
-          </div>
-          <div className="text-center text-lg sm:text-2xl md:text-3xl lg:text-4xl">
-            Jimitas
-            <span className="text-sm sm:text-xl md:text-2xl lg:text-3xl">(ジミタス)</span>
           </div>
         </div>
         <div className="w-8 sm:w-10 md:w-12 lg:w-14">
