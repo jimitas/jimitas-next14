@@ -8,6 +8,7 @@ import { useClearImage } from "@/hooks/useClearImage";
 import { PutImage } from "@/components/PutImage";
 import { PutText } from "@/components/PutText";
 import Title from "@/components/Layout/Title";
+import { BtnNext } from "@/components/PutButton/btnNext";
 
 const ITEM: number[] = [5, 6, 7, 8, 9, 10];
 const NUM: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -82,6 +83,7 @@ export default function Home() {
       <PutImage el_img={el_img}></PutImage>
       <BtnNum ITEM={NUM} handleEvent={checkAnswer}></BtnNum>
       <BtnQuestion handleEvent={giveQuestion}></BtnQuestion>
+      <BtnNext handleEvent={giveQuestion}/>
     </div>
   );
 }
