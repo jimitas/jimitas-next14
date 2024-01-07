@@ -73,9 +73,10 @@ export default function Home() {
   return (
     <div>
       <Title title="かぞえよう(5～10までのかず)" />
-      <div className="flex flex-wrap items-end justify-center">
+      <div className="m-2 flex flex-wrap items-center justify-center">
         <PutSelect ITEM={ITEM} handleEvent={changeSelect}></PutSelect>
-        <div style={{ fontSize: "max(2vw,20px)" }}>までのかず</div>
+
+        <div className="text-xl">までのかず</div>
       </div>
       <PutText el_text={el_text}></PutText>
       <PutImage el_img={el_img}></PutImage>
