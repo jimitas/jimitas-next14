@@ -17,7 +17,7 @@ export function BtnNum(props: BtnNumProps) {
       {ITEM.map((num) => (
         <button
           className="m-0.5 sm:m-1 p-1 font-bold
-           w-8 sm:w-10 md:w-12 
+           w-7 sm:w-10 md:w-12 
            text-sm sm:text-base md:text-xl
           border-blue-700 bg-white border-2 text-blue-700  hover:bg-blue-700 hover:text-white active:translate-y-1 rounded-lg shadow-lg"
           onClick={() => handleClick(num)}

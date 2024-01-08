@@ -167,7 +167,7 @@ export default function Nanbanme() {
       <PutImage el_img={el_img}></PutImage>
 
       <div ref={el_input} hidden={true}>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center flex-wrap items-center">
           <PutSelect ITEM={DIR} handleEvent={changeSelect_1}></PutSelect>
           <div className="text-xl">から</div>
           <PutSelect ITEM={NUM} handleEvent={changeSelect_2}></PutSelect>
