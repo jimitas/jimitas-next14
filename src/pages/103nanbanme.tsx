@@ -26,6 +26,7 @@ export default function Nanbanme() {
   // setFlagでもきちんとtrue,flaseを制御できていない問題。R6.1.8
   const [flag, setFlag] = useState<boolean>(true);
 
+  const el_flag = useRef<HTMLDivElement>(null);
   const el_text = useRef<HTMLDivElement>(null);
   const el_img = useRef<HTMLImageElement>(null);
   const el_input = useRef<HTMLInputElement>(null);
@@ -37,6 +38,7 @@ export default function Nanbanme() {
 
   useEffect(() => {
     shuffleOrder();
+    el_flag.current!.innerHTML = String(flag);
   }, []);
 
   // useEffectの順番によって、問題１、問題２のはじめにどちらが表示されるかが決まる。
@@ -63,30 +65,39 @@ export default function Nanbanme() {
     el_text.current!.innerHTML = el_text.current!.innerHTML + "　は　なんばんめ?";
   }, [count_2]);
 
-  const giveQuestion_1 = useCallback(() => {
+  const el_setFlagTrue = () => {
+    el_flag.current!.innerText = "true";
+  };
+  const el_setFlagFalse = () => {
+    el_flag.current!.innerText = "false";
+  };
+
+  const giveQuestion_1 = () => {
     se.set.play();
     imgClickflag = true;
     setCount_1((count_1) => count_1 + 1);
-    setFlag(true);
-  }, []);
+    el_setFlagTrue();
+  };
 
-  const giveQuestion_2 = useCallback(() => {
+  const giveQuestion_2 = () => {
     se.set.play();
     imgClickflag = false;
     setCount_2((count_2) => count_2 + 1);
     setFlag(true);
-  }, []);
+    el_setFlagTrue();
+  };
 
   // とりあえずイベントをanyで受け取り、ターゲットIDはストリングで型をつける。
+  // おそらく10このonClickがあるため、flagの状態化がうまくいっていないのでは？
   const checkAnswer_1 = (e: any) => {
-    if (!flag) return;
+    if (el_flag.current!.innerText === "false") return;
     if (!imgClickflag) return;
-    setFlag(false);
+    el_setFlagFalse();
     const myAnswer: string = e.target.id;
     answer == myAnswer ? sendRight(el_text) : sendWrong(el_text);
     if (answer != myAnswer)
       setTimeout(() => {
-        setFlag(true);
+        el_setFlagTrue();
       }, 1000);
   };
 
@@ -101,14 +112,14 @@ export default function Nanbanme() {
       }, 1000);
   };
 
-  const shuffle = useCallback(() => {
+  const shuffle = () => {
     se.seikai1.play();
     shuffleOrder();
     setFlag(false);
     el_text.current!.innerHTML = "もんだいを　おしてね。";
-  }, []);
+  };
 
-  const shuffleOrder = useCallback(() => {
+  const shuffleOrder = () => {
     order = [];
     let num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
     for (let i = 0; i < 10; i++) {
@@ -116,9 +127,9 @@ export default function Nanbanme() {
     }
     clearImage(el_img); // 画像のクリア
     putImage();
-  }, []);
+  };
 
-  const putImage = useCallback(() => {
+  const putImage = () => {
     for (let i = 0; i < 10; i++) {
       const img = document.createElement("img");
       img.setAttribute("src", `images/${ANIMALS[order[i]]}.png`);
@@ -127,21 +138,24 @@ export default function Nanbanme() {
       img.addEventListener("click", checkAnswer_1, false);
       el_img.current!.appendChild(img);
     }
-  }, []);
+  };
 
-  const changeSelect_1 = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeSelect_1 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectIndex_1(e.target.value);
     se.set.play();
-  }, []);
+  };
 
-  const changeSelect_2 = useCallback((e: React.ChangeEvent<HTMLSelectElement>) => {
+  const changeSelect_2 = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setSelectIndex_2(Number(e.target.value));
     se.set.play();
-  }, []);
+  };
 
   return (
     <div>
       <Title title="なんばんめ" />
+
+      {/* el_flagの中に、flagの値を擬似的に格納。checkAnswer_1でのflagをここから取得*/}
+      <div hidden={true} ref={el_flag} className="text-center text-3xl"></div>
 
       <div className="flex justify-center items-center">
         <BtnQuestion btnText={"もんだい１"} handleEvent={giveQuestion_1}></BtnQuestion>
