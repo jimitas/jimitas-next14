@@ -5,7 +5,7 @@ export function PutSelect(props) {
     <div>
       <select
         onChange={handleEvent}
-        className="text-center item-center font-bold m-2 p-2 min-w-24 text-base md:text-xl border-green-400 text-black border-2 rounded-lg shadow-lg"
+        className="text-center font-bold m-2 p-2 min-w-24 text-base md:text-xl border-green-400 text-black border-2 rounded-lg shadow-lg"
       >
         {ITEM.map((item) => {
           return (

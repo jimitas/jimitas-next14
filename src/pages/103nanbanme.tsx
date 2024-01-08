@@ -167,11 +167,11 @@ export default function Nanbanme() {
       <PutImage el_img={el_img}></PutImage>
 
       <div ref={el_input} hidden={true}>
-        <div className="flex justify-center items-center" style={{ alignItems: "baseline" }}>
+        <div className="flex justify-center items-center">
           <PutSelect ITEM={DIR} handleEvent={changeSelect_1}></PutSelect>
-          <div style={{ fontSize: "max(2vw,16px)" }}>から</div>
+          <div className="text-xl">から</div>
           <PutSelect ITEM={NUM} handleEvent={changeSelect_2}></PutSelect>
-          <div style={{ fontSize: "max(2vw,16px)" }}>ばんめ</div>
+          <div className="text-xl">ばんめ</div>
           <BtnCheck handleEvent={checkAnswer_2}></BtnCheck>
         </div>
       </div>
