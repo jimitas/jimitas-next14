@@ -1,5 +1,4 @@
 import * as se from "@/components/se";
-import styles from "@/styles/Home.module.css";
 import { Block } from "@/components/Block";
 import { Hide } from "@/components/Hide";
 import { useState, useRef, useEffect } from "react";
@@ -8,8 +7,6 @@ import { useCheckAnswer } from "@/hooks/useCheckAnswer";
 import { PutSelect } from "@/components/PutSelect";
 import { PutShiki } from "@/components/PutShiki";
 import { PutText } from "@/components/PutText";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faQuestion, faUserEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { BtnCheck } from "@/components/PutButton/btnCheck";
 import Title from "@/components/Layout/Title";
 import { BtnQuestion } from "@/components/PutButton/btnQuestion";
@@ -152,7 +149,7 @@ export default function Hikizan1() {
 
   return (
     <div>
-      <Title title="ひきざんの　しかた"/>
+      <Title title="ひきざんの　しかた" />
 
       <div className="flex flex-wrap justify-center items-center">
         <PutSelect ITEM={ITEM} handleEvent={changeSelect}></PutSelect>
@@ -173,9 +170,7 @@ export default function Hikizan1() {
         <BtnCheck handleEvent={checkAnswerEvent} />
       </div>
 
-      <div className={styles.place}>
-        <Block leftCount={left_value} rightCount={0} />
-      </div>
+      <Block leftCount={left_value} rightCount={0} />
 
       <BtnNum ITEM={NUM_1} handleEvent={checkAnswer}></BtnNum>
 

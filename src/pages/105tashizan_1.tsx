@@ -1,5 +1,4 @@
 import * as se from "@/components/se";
-import styles from "@/styles/Home.module.css";
 import { Block } from "@/components/Block";
 import { useState, useRef, useEffect } from "react";
 import { BtnNum } from "@/components/PutButton/btnNum";
@@ -7,8 +6,6 @@ import { useCheckAnswer } from "@/hooks/useCheckAnswer";
 import { PutSelect } from "@/components/PutSelect";
 import { PutShiki } from "@/components/PutShiki";
 import { PutText } from "@/components/PutText";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEye, faQuestion, faUserEdit, faCheck } from "@fortawesome/free-solid-svg-icons";
 import { BtnCheck } from "@/components/PutButton/btnCheck";
 import Title from "@/components/Layout/Title";
 import { BtnQuestion } from "@/components/PutButton/btnQuestion";
@@ -188,9 +185,7 @@ export default function Tashizan1() {
         <BtnCheck handleEvent={checkAnswerEvent} />
       </div>
 
-      <div className={styles.place}>
-        <Block leftCount={left_value} rightCount={right_value} />
-      </div>
+      <Block leftCount={left_value} rightCount={right_value} />
 
       <BtnNum ITEM={NUM_1} handleEvent={checkAnswer}></BtnNum>
 
