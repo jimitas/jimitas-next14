@@ -12,6 +12,8 @@ import { faEye, faQuestion, faUserEdit, faCheck } from "@fortawesome/free-solid-
 import { BtnCheck } from "@/components/PutButton/btnCheck";
 import Title from "@/components/Layout/Title";
 import { BtnQuestion } from "@/components/PutButton/btnQuestion";
+import { BtnSet } from "@/components/PutButton/btnSet";
+import { BtnShowAnswer } from "@/components/PutButton/btnShowAnswer";
 
 // 8/20できるだけrefを使わなくてもできるのではないか？
 
@@ -166,23 +168,12 @@ export default function Tashizan1() {
   return (
     <div>
       <Title title="たしざんの　しかた" />
-      <div className="flex flex-wrap justify-center items-center">
-        <PutSelect ITEM={ITEM} handleEvent={changeSelect}></PutSelect>
-        
-        <BtnQuestion handleEvent={giveQuestion}></BtnQuestion>
 
-        <button className={styles.btn} onClick={setQuest}>
-          <div style={{ display: "flex" }}>
-            <FontAwesomeIcon icon={faUserEdit} className="w-8 h-8" />
-            {"セット"}
-          </div>
-        </button>
-        <button className={styles.btn} onClick={showAnswer}>
-          <div style={{ display: "flex" }}>
-            <FontAwesomeIcon icon={faEye} className="w-8 h-8" />
-            {"こたえをみる"}
-          </div>
-        </button>
+      <div className="flex flex-wrap justify-center items-center">
+        <PutSelect ITEM={ITEM} handleEvent={changeSelect} />
+        <BtnQuestion handleEvent={giveQuestion} />
+        <BtnSet handleEvent={setQuest} />
+        <BtnShowAnswer handleEvent={showAnswer} />
       </div>
 
       <PutText el_text={el_text}></PutText>

@@ -13,6 +13,8 @@ import { faEye, faQuestion, faUserEdit, faCheck } from "@fortawesome/free-solid-
 import { BtnCheck } from "@/components/PutButton/btnCheck";
 import Title from "@/components/Layout/Title";
 import { BtnQuestion } from "@/components/PutButton/btnQuestion";
+import { BtnSet } from "@/components/PutButton/btnSet";
+import { BtnShowAnswer } from "@/components/PutButton/btnShowAnswer";
 
 const NUM_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const NUM_2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -151,23 +153,12 @@ export default function Hikizan1() {
   return (
     <div>
       <Title title="ひきざんの　しかた"/>
+
       <div className="flex flex-wrap justify-center items-center">
         <PutSelect ITEM={ITEM} handleEvent={changeSelect}></PutSelect>
-
         <BtnQuestion handleEvent={giveQuestion}></BtnQuestion>
-
-        <button className={styles.btn} onClick={setQuest}>
-          <div style={{ display: "flex" }}>
-            <FontAwesomeIcon icon={faUserEdit} className="w-8 h-8" />
-            {"セット"}
-          </div>
-        </button>
-        <button className={styles.btn} onClick={showAnswer}>
-          <div style={{ display: "flex" }}>
-            <FontAwesomeIcon icon={faEye} className="w-8 h-8" />
-            {"こたえをみる"}
-          </div>
-        </button>
+        <BtnSet handleEvent={setQuest} />
+        <BtnShowAnswer handleEvent={showAnswer} />
       </div>
 
       <PutText el_text={el_text}></PutText>

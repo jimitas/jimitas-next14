@@ -1,11 +1,12 @@
 import * as se from "@/components/se";
-import styles from "@/styles/Home.module.css";
 import { useState, useRef, useEffect, useCallback } from "react";
 import { BtnNum } from "@/components/PutButton/btnNum";
 import { useCheckAnswer } from "@/hooks/useCheckAnswer";
 import { PutSelect } from "@/components/PutSelect";
 import { PutText } from "@/components/PutText";
 import Title from "@/components/Layout/Title";
+import { BtnStart } from "@/components/PutButton/btnStart";
+import { BtnStop } from "@/components/PutButton/btnStop";
 
 const NUM_1 = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 const NUM_2 = [11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
@@ -146,16 +147,12 @@ export default function Tashizan1() {
 
   return (
     <div>
-      <Title title="たしざんの　れんしゅう"/>
-      <div className="flex flex-wrap justify-center items-center">
-        <PutSelect ITEM={ITEM} handleEvent={changeSelect}></PutSelect>
+      <Title title="たしざんの　れんしゅう" />
 
-        <button className={styles.btn} onClick={gameStartEvent}>
-          {"スタート"}
-        </button>
-        <button className={styles.btn} onClick={gameStopEvent}>
-          {"ストップ"}
-        </button>
+      <div className="flex flex-wrap justify-center items-center">
+        <PutSelect ITEM={ITEM} handleEvent={changeSelect} />
+        <BtnStart handleEvent={gameStartEvent} />
+        <BtnStop handleEvent={gameStopEvent} />
       </div>
 
       <div className="flex flex-wrap justify-center items-center m-5">
